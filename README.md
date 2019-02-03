@@ -7,3 +7,4 @@
 06.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/06.Sets%20and%20Dictionaries%20Advance%20-%20Exercise"> Sets and Dictionaries Advance - Exercise </a><br>
 08.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/08.Streams%2C%20Files%20and%20Directories%20-%20Exercise"> Streams, Files and Directories - Exercise </a><br>
 09.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/09.Functional%20Programming%20-%20Lab"> Functional Programming - Lab </a><br>
+10.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/10.Functional%20Programming%20-%20Exercises"> Functional Programming - Exercise </a><br>
