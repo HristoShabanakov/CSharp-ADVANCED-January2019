@@ -1,4 +1,6 @@
-# C# ADVANCED - January2019
+## Course Content:
+
+<a href ="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20Advanced"> C# ADVANCED - January 2019 </a><br>
 01.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/01.Stacks%20And%20Queues%20-%20Lab"> Stacks And Queues - Lab </a><br>
 02.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/02.Stacks%20And%20Queues%20-%20Exercise"> Stacks And Queues - Exercise </a><br>
 03.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/03.Multidimensional%20Arrays%20-%20Lab"> Multidimensional Arrays - Lab </a><br>
