@@ -6,3 +6,5 @@
 06.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20OOP/06.Inheritance%20-%20Exercise"> Inheritance - Exercise </a><br>
 07.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20OOP/07.Interfaces%20and%20Abstraction%20-%20Lab"> Interfaces and Abstraction - Lab </a><br>
 08.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20OOP/08.Interfaces%20and%20Abstraction%20-%20Exercise"> Interfaces and Abstraction - Exercise </a><br> 
+10.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20OOP/10.Polymorphism%20-%20Exercise"> Polymorphism - Exercise </a><br>
+12.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20OOP/12.Solid%20-%20Exercise/01.Logger"> Solid - Exercise </a><br>
