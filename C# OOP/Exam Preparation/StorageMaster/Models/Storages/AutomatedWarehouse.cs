@@ -1,8 +1,5 @@
 ﻿namespace StorageMaster.Models.Storages
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
     using StorageMaster.Models.Vehicles;
 
     public class AutomatedWarehouse : Storage

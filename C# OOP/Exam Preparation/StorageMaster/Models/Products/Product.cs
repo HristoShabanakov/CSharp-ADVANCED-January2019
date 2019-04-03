@@ -27,7 +27,6 @@
                 this.price = value;
             }
         }
-
         
         public double Weight { get; private set; }
     }
