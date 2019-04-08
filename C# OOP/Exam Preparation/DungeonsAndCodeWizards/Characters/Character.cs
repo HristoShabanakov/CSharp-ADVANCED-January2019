@@ -20,11 +20,25 @@ namespace DungeonsAndCodeWizards.Characters
         private bool isAlive;
         private double restHealMultiplier;
 
-        public Character()
+        public Character(string name, double health, double armor, double abilityPoints, Bag bag, Faction faction)
         {
+            //BaseHealth and BaseArmor have default values so they have to be initialized in the constructor!
+            this.Name = name;
+            this.BaseHealth = health;
+            this.Health = health;
+            this.BaseArmor = armor;
+            this.Armor = armor;
+            this.AbilityPoints = abilityPoints;
+            this.Bag = bag;
+            this.Faction = faction;
             //Set them with the constructor, because both of them have default values.
             this.IsAlive = true;
             this.RestHealMultiplier = defaultRestHealMultiplier;
+        }
+
+        public Character()
+        {
+
         }
 
         protected Character(string name, double health, double armor, double abilityPoints, Bag bag)
@@ -160,22 +174,34 @@ namespace DungeonsAndCodeWizards.Characters
 
         public void UseItemOn(Item item, Character character)
         {
-
+            EnsureBothCharactersAreAlive(character);
+            item.AffectCharacter(character);
         }
+        
 
         public void GiveCharacterItem(Item item, Character character)
         {
-
+            EnsureBothCharactersAreAlive(character);
+            character.ReceiveItem(item);
         }
 
         public void ReceiveItem(Item item)
         {
-
+            EnsureIsAlive();
+            this.Bag.AddItem(item);
         }
 
         private void EnsureIsAlive()
         {
             if (!this.isAlive)
+            {
+                throw new InvalidOperationException("Must be alive to perform this action!");
+            }
+        }
+
+        protected void EnsureBothCharactersAreAlive(Character character)
+        {
+            if(!this.IsAlive || !character.isAlive)
             {
                 throw new InvalidOperationException("Must be alive to perform this action!");
             }

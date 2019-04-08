@@ -23,7 +23,7 @@
         //Only the inherited classes should know about this method
         protected void EnsureIsAlive(Character character)
         {
-            if (character.IsAilve)
+            if (!character.IsAlive)
             {
                 throw new InvalidOperationException("Must be alive to perform this action!.");
             }
