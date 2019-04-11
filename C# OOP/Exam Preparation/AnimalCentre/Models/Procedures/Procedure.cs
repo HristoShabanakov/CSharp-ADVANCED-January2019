@@ -22,6 +22,8 @@
                 throw new ArgumentException("Animal doesn't have enough procedure time");
             }
             animal.ProcedureTime -= procedureTime;
+
+            ProcedureHistory.Add(animal);
         }
 
 
