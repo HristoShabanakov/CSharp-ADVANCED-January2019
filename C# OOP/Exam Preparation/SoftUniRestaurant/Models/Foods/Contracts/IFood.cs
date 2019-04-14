@@ -8,10 +8,10 @@
 
         //Price – decimal (can’t be less or equal to 0. In these cases, throw an ArgumentException with message "Price cannot be less or equal to zero!") 
 
-        string Name { get; set; }
+        string Name { get; }
 
-        int ServingSize { get; set; }
+        int ServingSize { get; }
 
-        decimal Price { get; set; }
+        decimal Price { get; }
     }
 }

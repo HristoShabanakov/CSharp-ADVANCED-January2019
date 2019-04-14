@@ -5,35 +5,36 @@
     using SoftUniRestaurant.Models.Tables.Contracts;
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
 
     public abstract class Table : ITable
     {
+        private IList<IFood> foodOrders;
+        private IList<IDrink> drinkOrders;
         private int capacity;
         private int numberOfPeople;
-        private int tableNumber;
         private decimal pricePerPerson;
+
 
         protected Table(int tableNumber, int capacity, decimal pricePerPerson)
         {
             this.TableNumber = tableNumber;
             this.Capacity = this.capacity;
-            this.PricePerPerson = pricePerPerson;
+            this.pricePerPerson = pricePerPerson;
+            this.foodOrders = new List<IFood>();
+            this.drinkOrders = new List<IDrink>();
+            this.numberOfPeople = 0;
+            this.IsReserved = false;
         }
-
-        public ICollection<IFood> Foods => throw new NotImplementedException();
-
-        public ICollection<IDrink> Drinks => throw new NotImplementedException();
-
-        public int TableNumber { get ; set ; }
 
         public int Capacity
         {
             get => this.capacity;
 
-            set
+            private set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Capacity has to be greater than 0");
                 }
@@ -45,9 +46,9 @@
         {
             get => this.numberOfPeople;
 
-            set
+            private set
             {
-                if(value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Cannot place zero or less people!");
                 }
@@ -56,42 +57,82 @@
 
         }
 
-        public decimal PricePerPerson { get ; set; }
+        //It will be initialized by the constructor
+        public int TableNumber { get; }
+        public bool IsReserved { get; private set; }
 
-        public bool IsReserved { get; set; }
+        //Calculated property, which calculates the price for all people 
+        public decimal Price => this.foodOrders.Sum(f => f.Price) + this.drinkOrders.Sum(d => d.Price) + this.pricePerPerson + this.numberOfPeople;
 
-        public decimal Price { get => this.PricePerPerson * NumberOfPeople;}
-
-        public void Reserve(int numberOfPeople)
+        //Removes all of the ordered drinks and foods and finally frees the table and sets the count of people to 0. 
+        public void Clear()
         {
-            //Reserves the table with the count of people given. 
-        }
-
-        public void OrderFood(IFood food)
-        {
-            //Orders the provided food (think of a way to collect all the food which is ordered). 
-        }
-
-        public void OrderDrink(IDrink drink)
-        {
-            //Orders the provided drink (think of a way to collect all the drinks which are ordered). 
+            this.drinkOrders.Clear();
+            this.foodOrders.Clear();
+            this.IsReserved = false;
+            this.numberOfPeople = 0;
         }
 
         public decimal GetBill()
         {
-            //Returns the bill for all of the ordered drinks and food. 
-            return 10;
+            return this.Price;
         }
 
-        public void Clear()
+        public string GetFreeTableInfo()
         {
-            //Removes all of the ordered drinks and food and finally frees the table and sets the count of people to 0. 
+            StringBuilder result = new StringBuilder();
+
+            result.AppendLine($"Table: {this.TableNumber}")
+                .AppendLine($"Type: {this.GetType().Name}")
+                .AppendLine($"Capacity: {capacity}")
+                .AppendLine($"Price per Person: {pricePerPerson:f2}");
+
+            return result.ToString().TrimEnd();
         }
 
         public string GetOccupiedTableInfo()
         {
-            return $"Table: {this.TableNumber}";
+            StringBuilder result = new StringBuilder();
+
+            result.AppendLine($"Table: {this.TableNumber}")
+                .AppendLine($"Type: {this.GetType().Name}")
+                .AppendLine($"Number of people: {numberOfPeople}");
+
+            string foodOrders = this.foodOrders.Count > 0 ? this.foodOrders.Count.ToString() : "None";
+
+            string drinkOrders = this.drinkOrders.Count > 0 ? this.drinkOrders.Count.ToString() : "None";
+
+             result.AppendLine($"Food orders: {foodOrders}");
+
+            foreach (var food in this.foodOrders)
+            {
+                result.AppendLine(food.ToString());
+            }
+
+            result.AppendLine($"Drink orders: {drinkOrders}");
+
+            foreach (var drink in this.drinkOrders)
+            {
+                result.AppendLine(drink.ToString());
+            }
+
+            return result.ToString().TrimEnd();
         }
 
+        public void OrderDrink(IDrink drink)
+        {
+            this.drinkOrders.Add(drink);
+        }
+
+        public void OrderFood(IFood food)
+        {
+            this.foodOrders.Add(food);
+        }
+
+        public void Reserve(int numberOfPeople)
+        {
+            this.NumberOfPeople = numberOfPeople;
+            this.IsReserved = true;
+        }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SoftUniRestaurant.Models.Foods
+﻿namespace SoftUniRestaurant.Models.Foods
 {
     public class MainCourse : Food
     {

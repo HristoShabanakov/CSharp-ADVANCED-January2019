@@ -1,7 +1,5 @@
 ﻿using SoftUniRestaurant.Models.Foods.Contracts;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SoftUniRestaurant.Models.Foods
 {
@@ -10,6 +8,8 @@ namespace SoftUniRestaurant.Models.Foods
         private string name;
         private int servingSize;
         private decimal price;
+
+        
 
         protected Food(string name, int servingSize, decimal price)
         {
@@ -21,8 +21,8 @@ namespace SoftUniRestaurant.Models.Foods
         public string Name
         {
             get => this.name;
-
-            set
+            //Always put them private, and then if its needed change the Access Modifier.
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -36,7 +36,7 @@ namespace SoftUniRestaurant.Models.Foods
         {
             get => this.servingSize;
 
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -50,7 +50,7 @@ namespace SoftUniRestaurant.Models.Foods
         {
             get => this.price;
 
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -62,7 +62,7 @@ namespace SoftUniRestaurant.Models.Foods
 
         public override string ToString()
         {
-            return $"{this.Name}: {this.ServingSize}g - {this.Price:f2}";
+            return $"{name}: {servingSize}g - {price:f2}";
         }
     }
 }

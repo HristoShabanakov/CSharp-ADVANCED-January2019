@@ -1,41 +1,31 @@
 ﻿using SoftUniRestaurant.Models.Drinks.Contracts;
 using SoftUniRestaurant.Models.Foods.Contracts;
-using System.Collections.Generic;
 
 namespace SoftUniRestaurant.Models.Tables.Contracts
 {
     public interface ITable
     {
-        //FoodOrders – collection of foods accessible only by the base class. 
 
-        //DrinkOrders – collection of drinks accessible only by the base class.  
+        int TableNumber { get; }
 
-        //TableNumber – int the table number
+        int Capacity { get; }
 
-        //Capacity – int the table capacity(capacity can’t be less than zero.In these cases, throw an ArgumentException with message "Capacity has to be greater than 0")
+        bool IsReserved { get; }
 
-        //NumberOfPeople – int the count of people who want a table(number of people cannot be less or equal to 0. In these cases, throw an ArgumentException with message "Cannot place zero or less people!")
+        //All methods will be public
+        void Reserve(int numberOfPeople);
 
-        //PricePerPerson – decimal the price per person for the table
+        void OrderFood(IFood food);
 
-        //IsReserved – bool returns true if the table is reserved
+        void OrderDrink(IDrink drink);
 
-        //Price – calculated property, which calculates the price for all people
+        decimal GetBill();
 
-        ICollection<IFood> Foods { get;  }
+        void Clear();
 
-        ICollection<IDrink> Drinks { get; }
+        string GetFreeTableInfo();
 
-        int TableNumber { get; set; }
+        string GetOccupiedTableInfo();
 
-        int Capacity { get; set; }
-
-        int NumberOfPeople { get; set; }
-
-        decimal PricePerPerson { get; set; }
-
-        bool IsReserved { get; set; }
-
-        decimal Price { get;  }
     }
 }

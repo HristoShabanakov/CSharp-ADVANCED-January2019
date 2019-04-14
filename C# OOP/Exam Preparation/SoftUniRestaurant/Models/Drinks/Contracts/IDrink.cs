@@ -10,19 +10,14 @@
 
         //Brand -  string (If the brand is null or whitespace thrown ArgumentException with message "Brand cannot be null or white space!") 
 
-            /// <summary>
-            /// nsmr = dy
-            /// </summary>
-        string Name { get; set; }
+           
+        string Name { get; }
+       
+        int ServingSize { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        int ServingSize { get; set; }
+        decimal Price { get; }
 
-        decimal Price { get; set; }
-
-        string Brand { get; set; }
+        string Brand { get; }
 
     }
 }

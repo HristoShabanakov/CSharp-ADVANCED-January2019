@@ -22,7 +22,7 @@
         {
             get => this.name;
 
-            set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -36,7 +36,7 @@
         {
             get => this.servingSize;
 
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -51,7 +51,7 @@
         {
             get => this.price;
 
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -66,7 +66,7 @@
         {
             get => this.brand;
 
-            set
+            private set
             {
                 if (string.IsNullOrWhiteSpace(value))
                 {
@@ -76,9 +76,10 @@
             }
         }
 
+        //Returns a string with information about each drink. The returned string must be in the following format: 
         public override string ToString()
         {
-            return $"{this.Name} {this.Brand} - {this.ServingSize}ml - {this.Price:f2}lv";
+            return $"{name} {brand} - {servingSize}ml - {price:f2}lv";
         }
     }
 }
