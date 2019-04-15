@@ -1,42 +1,39 @@
-﻿using System.Collections.Generic;
-
-namespace Repository
+﻿namespace Repository
 {
+    using System.Collections.Generic;
+
     public class Repository
     {
-        //that has data field, which stores entities
-        private Dictionary<int, Person> people;
+        //Data field, which stores entities from class Person.
+        private Dictionary<int,Person> dataField;
         private int id;
 
         public Repository()
         {
-            this.people = new Dictionary<int, Person>();
+            this.dataField = new Dictionary<int, Person>();
             this.id = 0;
-        }
-        public int Count => this.people.Count;
-
-        public Dictionary<int, Person> People
-        {
-            get { return this.people; }
-            set { this.people = value; }
         }
 
         public void Add(Person person)
         {
-            this.people.Add(id++, person);
-            //this.id++;
+            this.dataField.Add(id, person);
+            this.id++;
         }
 
+
+        public int Count => this.dataField.Count;
+
+        //Returns the entity with given ID.
         public Person Get(int id)
         {
-            return this.people[id];
+            return this.dataField[id];
         }
 
         public bool Update(int id, Person newPerson)
         {
-            if (this.people.ContainsKey(id))
+            if (this.dataField.ContainsKey(id))
             {
-                this.people[id] = newPerson;
+                this.dataField[id] = newPerson;
                 return true;
             }
             return false;
@@ -44,12 +41,14 @@ namespace Repository
 
         public bool Delete(int id)
         {
-            if (this.people.ContainsKey(id))
+            if (this.dataField.ContainsKey(id))
             {
-                this.people.Remove(id);
+                this.dataField.Remove(id);
                 return true;
             }
+
             return false;
         }
+
     }
 }
