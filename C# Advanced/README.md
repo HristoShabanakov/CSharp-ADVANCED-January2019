@@ -1,3 +1,5 @@
+The course "C# Advanced" examines the .NET platform as well as the C# language. The course focus is : learn to <b>create linear data structures</b>, <b>solve algorithmic problems</b>, <b>work with streams</b>, files and directories, create templates, and attention is paid to the <b>functional programming paradigm</b> as well as to the basic tool that binds it to <b>LINQ</b> to process data streams.
+
 01.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20Advanced/01.Stacks%20And%20Queues%20-%20Lab"> Stacks And Queues - Lab </a><br>
 02.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20Advanced/02.Stacks%20And%20Queues%20-%20Exercise"> Stacks And Queues - Exercise </a><br>
 03.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20Advanced/03.Multidimensional%20Arrays%20-%20Lab"> Multidimensional Arrays - Lab </a><br>

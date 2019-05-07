@@ -1,3 +1,5 @@
+The course <b>"C# OOP"</b> will teach you the principles of <b>Object Oriented Programming</b> (OOP), <b>work with classes and objects</b>, <b>use object-oriented modeling</b>, and <b>build class hierarchies</b>. The <b>basic principles of OOP</b> will be studied as <b>abstraction</b> (interfaces, abstract classes), <b>encapsulation</b>, <b>inheritance</b> and <b>polymorphism</b>. We will get into the most commonly used <b>design patterns</b>. We will pay attention to component testing (unit test writing) and the concept of <b>Test Driven Development</b> (TDD), the use of <b>reflection</b>, and the use of events.
+
 01.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20OOP/01.Working%20with%20Abstraction%20-%20Lab"> Working with Abstraction - Lab </a><br>
 02.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20OOP/02.Working%20with%20Abstraction%20-%20Exercise"> Working with Abstraction - Exercise </a><br>
 03.<a href="https://github.com/HristoShabanakov/CSharp-ADVANCED-January2019/tree/master/C%23%20OOP/03.Encapsulation%20-%20Lab"> Encapsulation - Lab </a><br>
