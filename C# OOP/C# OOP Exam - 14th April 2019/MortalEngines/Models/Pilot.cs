@@ -8,6 +8,7 @@
     public class Pilot : IPilot
     {
         private string name;
+        private IList<IMachine> Machines;
 
         public Pilot(string name)
         {
@@ -28,9 +29,6 @@
             }
         }
 
-        private IList<IMachine> Machines;
-
-
         public void AddMachine(IMachine machine)
         {
            if(machine == null)
@@ -45,11 +43,11 @@
         {
             var report = new StringBuilder();
             report.AppendLine($"{this.Name} - {this.Machines.Count} machines");
+
             foreach (var machine in this.Machines)
             {
                 report.AppendLine(machine.ToString());
             }
-
             return report.ToString().TrimEnd();
         }
     }
